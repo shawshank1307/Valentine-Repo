@@ -62,12 +62,12 @@ border-radius: 10px;
 </head>
 <body>
 <div class="box">
-<h1>Will you be my Valentine Girl ? ❤️</h1>
+<h1>Will you be my Valentine ? ❤️</h1>
 <button id="yes">Yes</button>
 <button id="no">No</button>
 <div id="gif">
-<h2>You really made me  Happy Gurlll 😂💖</h2>
-<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTRmN2szN2NycDhoMGg4eGlnY3d6a2c2bmttbmtoY2p0cmZwc3R1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uWlpPGquhGZNFzY90z/giphy.gif">
+<h2>You really made me  Happy !!💖</h2>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZpa3pvc2ZqZzk0NWFxd2dmODJkYmZrNThxczNqenNwZGZ5ZThobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T70hpBP1L0N7U0jtkq/giphy.gif">
 </div>
 </div>
 <script>
@@ -81,7 +81,9 @@ noButton.style.left = x + "px";
 noButton.style.top = y + "px";
 });
 yesButton.addEventListener("click", () => {
-gifDiv.style.display = "block";
+  gifDiv.style.display = "block";
+  noButton.style.display = "none";
+  yesButton.style.display = "none";
 });
 </script>
 </body>
