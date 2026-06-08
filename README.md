@@ -1,4 +1,4 @@
-#  Valentine — Will You Be My Valentine?
+# 💖 Valentine — Will You Be My Valentine?
 
 > An interactive Valentine's Day web experience built with pure HTML, CSS, and JavaScript — my first deployed project as a first-year CS student.
 
@@ -10,13 +10,13 @@
 
 ---
 
-##  Preview
+## 📸 Preview
 
 > A soft pink-themed page asking **"Will you be my Valentine Girl? ❤️"** — with a Yes button that rewards you and a No button that literally runs away from your cursor.
 
 ---
 
-##  Live Site
+## 🚀 Live Site
 
 👉 **[https://shawshank1307.github.io/Valentine-Repo/](https://shawshank1307.github.io/Valentine-Repo/)**
 
@@ -35,7 +35,7 @@ This is a fun, interactive Valentine's Day webpage where:
 
 ---
 
-##  How I Thought Through This
+## 🧠 How I Thought Through This
 
 I built this project entirely in my **first year of computer science** — before I had formal training in DOM manipulation or event handling. Here's the thought process behind each piece:
 
@@ -67,7 +67,7 @@ After getting the HTML working locally, I deployed it using **GitHub Pages** by 
 
 ---
 
-##  Project Structure
+## 🗂️ Project Structure
 
 ```
 Valentine-Repo/
@@ -84,7 +84,7 @@ Valentine-Repo/
 
 ---
 
-##  Tech Stack
+## ⚙️ Tech Stack
 
 | Technology | Usage |
 |---|---|
@@ -108,7 +108,7 @@ No frameworks. No libraries. No build tools. Just the raw web fundamentals.
 
 ---
 
-##  Running Locally
+## 🛠️ Running Locally
 
 No installation or setup required.
 
@@ -126,7 +126,7 @@ open index.html
 
 ---
 
-##  What I Learned
+## 📚 What I Learned
 
 This project was my hands-on introduction to several core web development concepts:
 
