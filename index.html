@@ -1,96 +1,130 @@
-<!-- 
-Online HTML, CSS and JavaScript editor to run code online.
--->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Browser</title>
-</head>
-
-<body>
-  <h1>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Valentine?</title>
-<style>
-body {
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #ffe6eb;
-font-family: Arial, sans-serif;
-}
-.box {
-text-align: center;
-}
-h1 {
-color: #e6005c;
-}
-button {
-padding: 10px 20px;
-font-size: 18px;
-margin: 15px;
-border: none;
-border-radius: 8px;
-cursor: pointer;
-}
-#yes {
-background-color: #ff4d79;
-color: white;
-}
-#no {
-background-color: #999;
-color: white;
-position: absolute;
-}
-#gif {
-display: none;
-margin-top: 20px;
-}
-img {
-width: 250px;
-border-radius: 10px;
-}
-</style>
+  <title>Valentine?</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6eb;
+      font-family: Arial, sans-serif;
+    }
+    .box {
+      text-align: center;
+    }
+    h1 {
+      color: #e6005c;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #yes {
+      background-color: #ff4d79;
+      color: white;
+    }
+    #no {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
+    #gif {
+      display: none;
+      margin-top: 20px;
+    }
+    img {
+      width: 250px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-<div class="box">
-<h1>Will you be my Valentine ? ❤️</h1>
-<button id="yes">Yes</button>
-<button id="no">No</button>
-<div id="gif">
-<h2>You really made me  Happy !!💖</h2>
-<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZpa3pvc2ZqZzk0NWFxd2dmODJkYmZrNThxczNqenNwZGZ5ZThobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T70hpBP1L0N7U0jtkq/giphy.gif">
-</div>
-</div>
-<script>
-const noButton = document.getElementById("no");
-const yesButton = document.getElementById("yes");
-const gifDiv = document.getElementById("gif");
-noButton.addEventListener("mouseover", () => {
-const x = Math.random() * (window.innerWidth - 100);
-const y = Math.random() * (window.innerHeight - 50);
-noButton.style.left = x + "px";
-noButton.style.top = y + "px";
-});
-yesButton.addEventListener("click", () => {
-  gifDiv.style.display = "block";
-  noButton.style.display = "none";
-  yesButton.style.display = "none";
-  document.querySelector("h1").style.display = "none";
-});
-</script>
-</body>
-</html>
-  </p>
-  <script src="script.js"></script>
-</body>
+  <div class="box">
+    <h1>Will you be my Valentine ? ❤️</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+    <div id="gif">
+      <h2>You really made me Happy !! 💖</h2>
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZpa3pvc2ZqZzk0NWFxd2dmODJkYmZrNThxczNqenNwZGZ5ZThobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T70hpBP1L0N7U0jtkq/giphy.gif">
+    </div>
+  </div>
 
+  <script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const gifDiv = document.getElementById("gif");
+
+    noButton.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    });
+
+    yesButton.addEventListener("click", () => {
+      gifDiv.style.display = "block";
+      noButton.style.display = "none";
+      yesButton.style.display = "none";
+      document.querySelector("h1").style.display = "none";
+      launchConfetti();
+    });
+
+    function launchConfetti() {
+      const canvas = document.createElement("canvas");
+      canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;";
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const pieces = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        r: Math.random() * 8 + 4,
+        color: ["#ff4d79","#ff9ec4","#ffcce0","#ff1744","#ff80ab","#f48fb1","#ffffff"][Math.floor(Math.random() * 7)],
+        speed: Math.random() * 4 + 2,
+        spin: Math.random() * 0.2 - 0.1,
+        angle: Math.random() * 360,
+        shape: Math.random() > 0.5 ? "rect" : "circle"
+      }));
+
+      let frame = 0;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach(p => {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.angle);
+          ctx.fillStyle = p.color;
+          if (p.shape === "rect") {
+            ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 2);
+          } else {
+            ctx.beginPath();
+            ctx.arc(0, 0, p.r / 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          ctx.restore();
+          p.y += p.speed;
+          p.angle += p.spin;
+          if (p.y > canvas.height) {
+            p.y = -10;
+            p.x = Math.random() * canvas.width;
+          }
+        });
+        frame++;
+        if (frame < 300) requestAnimationFrame(animate);
+        else canvas.remove();
+      }
+      animate();
+    }
+  </script>
+</body>
 </html>
